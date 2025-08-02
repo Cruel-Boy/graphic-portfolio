@@ -754,15 +754,15 @@ body::before {
     cursor: pointer;
     font-size: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    background: linear-gradient(45deg, #5115a0, #0b78f5);
     color: white;
-    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 4px 15px rgba(11, 63, 173, 0.3);
     width: 100%;
 }
 
 .contact-submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 6px 20px rgba(36, 190, 251, 0.4);
 }
 
 /* Футер */
@@ -960,4 +960,5 @@ body::before {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
+
 } 
