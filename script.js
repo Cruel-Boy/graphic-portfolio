@@ -205,15 +205,9 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Функция для запуска полного цикла анимации
-function startTypingAnimation() {
+// Запускаем анимацию печатания при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
-    
-    // Очищаем предыдущие элементы
-    const existingTyping = heroTitle.querySelector('.typing-text');
-    const existingHighlight = heroTitle.querySelector('.highlight');
-    if (existingTyping) existingTyping.remove();
-    if (existingHighlight) existingHighlight.remove();
     
     // Создаем элемент для анимации
     const typingElement = document.createElement('span');
@@ -221,17 +215,16 @@ function startTypingAnimation() {
     heroTitle.appendChild(typingElement);
     
     // Запускаем анимацию
-    typeWriter(typingElement, 'Hello! I\'m  Kamola', 100);
-    
-    // Добавляем highlight после завершения печатания
     setTimeout(() => {
-        const highlightSpan = document.createElement('span');
-        highlightSpan.className = 'highlight';
-        highlightSpan.textContent = '';
-        heroTitle.appendChild(highlightSpan);
-    }, 1200);
-}
-
+        typeWriter(typingElement, 'Hello! I\'m  Kamola', 100);
+        setTimeout(() => {
+            const highlightSpan = document.createElement('span');
+            highlightSpan.className = 'highlight';
+            highlightSpan.textContent = '';
+            heroTitle.appendChild(highlightSpan);
+        }, 1200);
+    }, 500);
+});
 // Запускаем анимацию печатания при загрузке страницы и каждые 5 секунд
 document.addEventListener('DOMContentLoaded', () => {
     // Инициализация системы частиц
@@ -371,4 +364,5 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
+
 
